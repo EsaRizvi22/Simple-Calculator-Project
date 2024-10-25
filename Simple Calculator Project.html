@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator Project</title>
+</head>
+
+<body>
+    <h2>Simple Calculator Project</h2>
+
+    <input type="number" id="num1" oninput="calculate()">
+    <input type="number" id="num2" oninput="calculate()">
+
+    <h3>Results:</h3>
+    <p>Sum: <span id="sum"></span></p>
+    <p>Difference: <span id="difference"></span></p>
+    <p>Product: <span id="product"></span></p>
+
+    <script>
+        function calculate() {
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+
+            // Calculate results if both numbers are provided
+            const sum = !isNaN(num1) && !isNaN(num2) ? num1 + num2 : '';
+            const difference = !isNaN(num1) && !isNaN(num2) ? num1 - num2 : '';
+            const product = !isNaN(num1) && !isNaN(num2) ? num1 * num2 : '';
+
+            // Display results
+            document.getElementById("sum").innerText = sum;
+            document.getElementById("difference").innerText = difference;
+            document.getElementById("product").innerText = product;
+        }
+    </script>
+</body>
+
+</html>
